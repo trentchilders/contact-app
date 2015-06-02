@@ -1,0 +1,33 @@
+<table border = "1" style = "width: 100%">
+<tr>
+  <td><p>First Name</p></td>
+  <% @all_contacts.each do |contact|
+  %>
+  <td><p><%= contact.first_name%></p></td>
+  <% end %>
+</tr>
+
+<tr>
+  <td><p>Last Name</p></td>
+  <% @all_contacts.each do |contact|
+  %>
+  <td><p><%= contact.last_name%></p></td>
+  <% end %>
+</tr>
+
+<tr>
+  <td><p>email</p></td>
+  <% @all_contacts.each do |contact|
+  %>
+  <td><p><%= contact.email%></p></td>
+  <% end %>
+</tr>
+
+<tr>
+  <td><p>Phone Number</p></td>
+  <% @all_contacts.each do |contact|
+  %>
+  <td><p><%= contact.phone_number%></p></td>
+  <% end %>
+  </table>
+</tr>
