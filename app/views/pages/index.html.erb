@@ -1,9 +1,18 @@
 <table border = "1" style = "width: 100%">
 <tr>
+  
   <td><p>First Name</p></td>
   <% @all_contacts.each do |contact|
   %>
   <td><p><%= contact.first_name%></p></td>
+  <% end %>
+</tr>
+
+<tr>
+  <td><p>Middle Name</p></td>
+  <% @all_contacts.each do |contact|
+  %>
+  <td><p><%= contact.middle_name%></p></td>
   <% end %>
 </tr>
 

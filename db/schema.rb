@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528010254) do
+ActiveRecord::Schema.define(version: 20150605011851) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "first_name"
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 20150528010254) do
     t.string   "phone_number"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "middle_name"
+    t.text     "bio"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end

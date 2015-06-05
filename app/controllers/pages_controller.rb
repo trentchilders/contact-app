@@ -11,7 +11,8 @@ class PagesController < ApplicationController
   end
 
   def create
-    Contact.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
+    Contact.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number], middle_name: params[:middle_name], bio: params[:bio])
+    redirect_to "/contacts"
   end
 
   def show
@@ -27,7 +28,8 @@ class PagesController < ApplicationController
   def update
     @contact_id = params[:id]
     @contact = Contact.find_by(id: @contact_id)
-    @contact.update(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
+    @contact.update(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number], middle_name: params[:middle_name], bio: params[:bio])
+    redirect_to "/contacts/#{@contact_id}"
   end
 
   def destroy
