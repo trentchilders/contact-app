@@ -4,7 +4,11 @@ class PagesController < ApplicationController
   end
 
   def index
-    @all_contacts = Contact.all
+    if user_signed_in?
+      @all_contacts = current_user.contacts
+    else
+      redirect_to '/users/sign_in'
+    end
   end
 
   def new
@@ -13,7 +17,7 @@ class PagesController < ApplicationController
   def create
     coordinates = Geocoder.coordinates(params[:address])
 
-    Contact.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number], middle_name: params[:middle_name], bio: params[:bio], latitude: coordinates[0], longitude: coordinates[1])
+    Contact.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number], middle_name: params[:middle_name], bio: params[:bio], latitude: coordinates[0], longitude: coordinates[1], user_id: current_user.id)
     redirect_to "/contacts"
   end
 

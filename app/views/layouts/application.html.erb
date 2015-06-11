@@ -13,6 +13,9 @@
   <%= submit_tag "Search" %>
   <% end %>
 
+   <%= link_to 'Sign In', '/users/sign_in' if !current_user %>
+   <%= link_to 'Sign Out', '/users/sign_out', method: :delete if current_user %>
+   <%= link_to 'Sign Up', '/users/sign_up' if !current_user %>
 <%= yield %>
 
 </body>
