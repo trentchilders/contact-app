@@ -5,5 +5,8 @@
 <h3><%= @contact.email %></h3>
 <h3><%= @contact.japanify %></h3>
 <h3><%= @contact.bio %></h3>
+<% @contact.groups.each do |group| %>
+<h3><%= group.name %></h3>
+<% end %>
 <%= link_to "Delete Record", "/contacts/#{@contact.id}", method: :delete %>
 <p>last updated: <%= @contact.friendly_updated_time%></p>

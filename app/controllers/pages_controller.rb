@@ -9,6 +9,10 @@ class PagesController < ApplicationController
     else
       redirect_to '/users/sign_in'
     end
+
+    if params[:group]
+      @all_contacts = Group.find_by(name: params[:group]).contacts
+    end
   end
 
   def new

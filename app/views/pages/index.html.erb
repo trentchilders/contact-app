@@ -47,3 +47,7 @@
 <% end %>
 </tr>
 </table>
+
+<% Group.all.each do |group| %>
+<a href='/contacts?group=<%= group.name %>'> <%=group.name%></a> 
+<% end %>
