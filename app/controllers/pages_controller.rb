@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     end
 
     if params[:group]
-      @all_contacts = Group.find_by(name: params[:group]).contacts
+      @all_contacts = Group.find_by(name: params[:group]).contacts.where(user_id: current_user.id)
     end
   end
 
