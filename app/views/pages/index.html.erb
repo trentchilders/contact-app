@@ -4,7 +4,7 @@
   <th><p>First Name</p></th>
   <% @all_contacts.each do |contact|
   %>
-  <td><p><%= contact.first_name%></p></td>
+  <td> <%= link_to "#{contact.first_name}", "contacts/#{contact.id}" %></td>
   <% end %>
 </tr>
 
@@ -51,3 +51,4 @@
 <% Group.all.each do |group| %>
 <a href='/contacts?group=<%= group.name %>'> <%=group.name%> | </a> 
 <% end %>
+<a href='/'> Home </a>
